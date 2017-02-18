@@ -39,6 +39,7 @@ class JSONTests: XCTestCase {
             profile.name == "Marko Tadić",
             let repo = thisRepo,
             repo.name == "json-convertible",
+            repo.`private` == false,
             repo.owner.login == "tadija"
         {
             return true
@@ -56,6 +57,7 @@ class JSONTests: XCTestCase {
             name == "Marko Tadić",
             let thisRepo = repos.filter({ $0["id"] as? Int == 82324664 }).first,
             thisRepo["name"] as? String == "json-convertible",
+            thisRepo["private"] as? Bool == false,
             let owner = thisRepo["owner"] as? JSONObject,
             owner["login"] as? String == "tadija"
         {
