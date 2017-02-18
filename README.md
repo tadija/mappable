@@ -1,6 +1,6 @@
-# JSON
+# JSONConvertible
 
-**Swift package for simple and lightweight JSON handling**
+**Swift package for simple and lightweight handling of JSON backed models**
 
 > I made this for personal use, feel free to use it or contribute if you like.
 
@@ -9,7 +9,7 @@
 - [Swift Package Manager](https://swift.org/package-manager/):
 
 ```
-.Package(url: "https://github.com/tadija/json.git", majorVersion: 0)
+.Package(url: "https://github.com/tadija/json-convertible.git", majorVersion: 0)
 ```
 
 ## License

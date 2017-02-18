@@ -1,4 +1,5 @@
 import Foundation
+import JSONConvertible
 
 typealias ThrowAnyInClosure = (() throws -> Any) -> Void
 

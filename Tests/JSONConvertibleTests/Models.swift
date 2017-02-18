@@ -1,4 +1,4 @@
-import JSON
+import JSONConvertible
 
 struct User: JSONConvertible {
     let id: Int

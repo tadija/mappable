@@ -1,5 +1,5 @@
 import XCTest
-@testable import JSON
+@testable import JSONConvertible
 
 class JSONTests: XCTestCase {
     
@@ -38,7 +38,7 @@ class JSONTests: XCTestCase {
             profile.user.login == "tadija",
             profile.name == "Marko Tadić",
             let repo = thisRepo,
-            repo.name == "json",
+            repo.name == "json-convertible",
             repo.owner.login == "tadija"
         {
             return true
@@ -55,7 +55,7 @@ class JSONTests: XCTestCase {
             user["login"] as? String == "tadija",
             name == "Marko Tadić",
             let thisRepo = repos.filter({ $0["id"] as? Int == 82324664 }).first,
-            thisRepo["name"] as? String == "json",
+            thisRepo["name"] as? String == "json-convertible",
             let owner = thisRepo["owner"] as? JSONObject,
             owner["login"] as? String == "tadija"
         {

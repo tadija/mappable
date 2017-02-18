@@ -1,6 +1,6 @@
 import XCTest
-@testable import JSONTests
+@testable import JSONConvertibleTests
 
 XCTMain([
-     testCase(JSONTests.allTests),
+     testCase(JSONConvertibleTests.allTests),
 ])
