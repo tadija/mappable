@@ -13,12 +13,12 @@ class DataSource {
     func fetchModel(username: String, completion: @escaping ThrowAnyInClosure) {
         fetchUser(username: username) { (closure) in
             do {
-                if var userData = try closure() as? JSONObject {
+                if var profileData = try closure() as? JSONObject {
                     self.fetchRepos(username: username, completion: { (closure) in
                         do {
                             let reposData = try closure()
-                            userData["repos"] = reposData
-                            completion { return userData }
+                            profileData["repos"] = reposData
+                            completion { return profileData }
                         } catch {
                             completion { throw error }
                         }
