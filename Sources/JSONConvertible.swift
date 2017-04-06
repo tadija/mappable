@@ -5,7 +5,19 @@ public protocol JSONConvertible {
     init(json: JSONObject) throws
 }
 
+enum JSONConvertibleError: Error {
+    case jsonSerializationFailed
+}
+
 extension JSONConvertible {
+    
+    public init(data: Data, options: JSONSerialization.ReadingOptions = .allowFragments) throws {
+        if let json = try JSONSerialization.jsonObject(with: data, options: options) as? JSONObject {
+            try self.init(json: json)
+        } else {
+            throw JSONConvertibleError.jsonSerializationFailed
+        }
+    }
     
     public var json: JSONObject {
         var json = JSONObject()
