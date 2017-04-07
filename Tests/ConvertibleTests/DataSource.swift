@@ -1,17 +1,36 @@
 import Foundation
-import Convertible
 
 typealias ThrowAnyInClosure = (() throws -> Any) -> Void
+typealias ThrowProfileInClosure = (() throws -> Profile) -> Void
 
 class DataSource {
     
     private let base = URL(string: "https://api.github.com")!
     
     enum DataSourceError: Error {
-        case anyError
+        case requestFailed
     }
     
-    func fetchModel(username: String, completion: @escaping ThrowAnyInClosure) {
+    func fetchProfile(withUsername username: String, completion: @escaping ThrowProfileInClosure) {
+        fetchModel(username: username) { closure in
+            do {
+                if let data = try closure() as? [String : Any] {
+                    let profile = try Profile(dictionary: data)
+                    completion {
+                        return profile
+                    }
+                } else {
+                    throw DataSourceError.requestFailed
+                }
+            } catch {
+                completion {
+                    throw error
+                }
+            }
+        }
+    }
+    
+    private func fetchModel(username: String, completion: @escaping ThrowAnyInClosure) {
         fetchUser(username: username) { (closure) in
             do {
                 if var profileData = try closure() as? [String : Any] {
@@ -25,7 +44,7 @@ class DataSource {
                         }
                     })
                 } else {
-                    completion { throw DataSourceError.anyError }
+                    completion { throw DataSourceError.requestFailed }
                 }
             } catch {
                 completion { throw error }
@@ -53,7 +72,7 @@ class DataSource {
                     completion { throw error }
                 }
             } else {
-                completion { throw DataSourceError.anyError }
+                completion { throw DataSourceError.requestFailed }
             }
         }.resume()
     }

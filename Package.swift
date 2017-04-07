@@ -1,5 +1,6 @@
 import PackageDescription
 
 let package = Package(
-    name: "Convertible"
+    name: "Convertible",
+    exclude: ["Example"]
 )

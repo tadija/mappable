@@ -8,11 +8,10 @@ class ConvertibleTests: XCTestCase {
     func testConvertible() {
         let fetchModel = expectation(description: "Fetch Model")
         
-        dataSource.fetchModel(username: "tadija") { (closure) in
+        dataSource.fetchProfile(withUsername: "tadija") { (closure) in
             do {
-                let data = try closure()
-                let dictionary = data as! [String : Any]
-                let isValid = try self.performValidation(with: dictionary)
+                let profile = try closure()
+                let isValid = self.performValidation(with: profile)
                 XCTAssert(isValid)
             } catch {
                 debugPrint(error)
@@ -24,8 +23,7 @@ class ConvertibleTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
 
-    private func performValidation(with dictionary: [String : Any]) throws -> Bool {
-        let profile = try Profile(dictionary: dictionary)
+    private func performValidation(with profile: Profile) -> Bool {
         let isModelValid = performModelValidation(with: profile)
         let isModelDictionaryValid = performDictionaryValidation(with: profile)
         let isValid = isModelValid && isModelDictionaryValid
