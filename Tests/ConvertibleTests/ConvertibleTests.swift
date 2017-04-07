@@ -8,7 +8,7 @@ class ConvertibleTests: XCTestCase {
     func testConvertible() {
         let fetchModel = expectation(description: "Fetch Model")
         
-        dataSource.fetchProfile(withUsername: "tadija") { (closure) in
+        dataSource.fetchProfile(username: "tadija") { (closure) in
             do {
                 let profile = try closure()
                 let isValid = self.performValidation(with: profile)
@@ -34,7 +34,6 @@ class ConvertibleTests: XCTestCase {
         let thisRepo = profile.repos.filter{ $0.id == 82324664 }.first
         if profile.user.id == 2762374,
             profile.user.login == "tadija",
-            profile.name == "Marko Tadić",
             let repo = thisRepo,
             repo.name == "json-convertible",
             repo.`private` == false,
@@ -48,11 +47,9 @@ class ConvertibleTests: XCTestCase {
     
     private func performDictionaryValidation(with profile: Profile) -> Bool {
         if let user = profile.dictionary["user"] as? [String : Any],
-            let name = profile.dictionary["name"] as? String,
             let repos = profile.dictionary["repos"] as? Array<[String : Any]>,
             user["id"] as? Int == 2762374,
             user["login"] as? String == "tadija",
-            name == "Marko Tadić",
             let thisRepo = repos.filter({ $0["id"] as? Int == 82324664 }).first,
             thisRepo["name"] as? String == "json-convertible",
             thisRepo["private"] as? Bool == false,

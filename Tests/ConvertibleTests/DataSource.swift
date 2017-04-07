@@ -1,6 +1,8 @@
 import Foundation
 
-typealias ThrowAnyInClosure = (() throws -> Any) -> Void
+typealias ThrowDataInClosure = (() throws -> Data) -> Void
+typealias ThrowUserInClosure = (() throws -> User) -> Void
+typealias ThrowReposInClosure = (() throws -> [Repo]) -> Void
 typealias ThrowProfileInClosure = (() throws -> Profile) -> Void
 
 class DataSource {
@@ -11,66 +13,64 @@ class DataSource {
         case requestFailed
     }
     
-    func fetchProfile(withUsername username: String, completion: @escaping ThrowProfileInClosure) {
-        fetchModel(username: username) { closure in
-            do {
-                if let data = try closure() as? [String : Any] {
-                    let profile = try Profile(dictionary: data)
-                    completion {
-                        return profile
-                    }
-                } else {
-                    throw DataSourceError.requestFailed
-                }
-            } catch {
-                completion {
-                    throw error
-                }
-            }
-        }
-    }
-    
-    private func fetchModel(username: String, completion: @escaping ThrowAnyInClosure) {
+    func fetchProfile(username: String, completion: @escaping ThrowProfileInClosure) {
         fetchUser(username: username) { (closure) in
             do {
-                if var profileData = try closure() as? [String : Any] {
-                    self.fetchRepos(username: username, completion: { (closure) in
-                        do {
-                            let reposData = try closure()
-                            profileData["repos"] = reposData
-                            completion { return profileData }
-                        } catch {
-                            completion { throw error }
+                let user = try closure()
+                
+                self.fetchRepos(username: username, completion: { (closure) in
+                    do {
+                        let repos = try closure()
+                        
+                        var data = user.dictionary
+                        data["repos"] = repos.map{ $0.dictionary }
+                        
+                        let profile = try Profile(dictionary: data)
+                        completion {
+                            return profile
                         }
-                    })
-                } else {
-                    completion { throw DataSourceError.requestFailed }
-                }
+                        
+                    } catch {
+                        completion { throw error }
+                    }
+                })
+                
             } catch {
                 completion { throw error }
             }
         }
     }
     
-    private func fetchUser(username: String, completion: @escaping ThrowAnyInClosure) {
+    private func fetchUser(username: String, completion: @escaping ThrowUserInClosure) {
         let url = base.appendingPathComponent("users/\(username)")
-        fetchJSON(fromURL: url, completion: completion)
+        fetchData(fromURL: url) { (closure) in
+            do {
+                let data = try closure()
+                let user = try User(jsonData: data)
+                completion { return user }
+            } catch {
+                completion { throw error }
+            }
+        }
     }
     
-    private func fetchRepos(username: String, completion: @escaping ThrowAnyInClosure) {
+    private func fetchRepos(username: String, completion: @escaping ThrowReposInClosure) {
         let url = base.appendingPathComponent("users/\(username)/repos")
-        fetchJSON(fromURL: url, completion: completion)
+        fetchData(fromURL: url) { (closure) in
+            do {
+                let data = try closure()
+                let repos: [Repo] = try Repo.array(with: data)
+                completion { return repos }
+            } catch {
+                completion { throw error }
+            }
+        }
     }
     
-    private func fetchJSON(fromURL url: URL, completion: @escaping ThrowAnyInClosure) {
+    private func fetchData(fromURL url: URL, completion: @escaping ThrowDataInClosure) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                    completion { return json }
-                } catch {
-                    completion { throw error }
-                }
+                completion { return data }
             } else {
                 completion { throw DataSourceError.requestFailed }
             }

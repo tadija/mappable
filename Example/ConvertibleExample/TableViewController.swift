@@ -19,7 +19,7 @@ class TableViewController: UITableViewController {
     }
     
     private func loadProfile() {
-        dataSource.fetchProfile(withUsername: "tadija") { closure in
+        dataSource.fetchProfile(username: "tadija") { closure in
             do {
                 let profile = try closure()
                 self.profile = profile

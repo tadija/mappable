@@ -26,12 +26,10 @@ struct Repo: Convertible {
 
 struct Profile: Convertible {
     let user: User
-    let name: String
     let repos: [Repo]
     
     init(dictionary: [String : Any]) throws {
         user = try User(dictionary: dictionary)
-        name = try dictionary.value(forKey: "name")
         repos = try dictionary.objectsArray(forKey: "repos")
     }
 }
