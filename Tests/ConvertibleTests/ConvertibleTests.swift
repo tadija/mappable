@@ -1,18 +1,18 @@
 import XCTest
-@testable import JSONConvertible
+@testable import Convertible
 
-class JSONTests: XCTestCase {
+class ConvertibleTests: XCTestCase {
     
     let dataSource = DataSource()
     
-    func testJSONConvertible() {
+    func testConvertible() {
         let fetchModel = expectation(description: "Fetch Model")
         
         dataSource.fetchModel(username: "tadija") { (closure) in
             do {
                 let data = try closure()
-                let json = data as! JSONObject
-                let isValid = try self.performValidation(with: json)
+                let dictionary = data as! [String : Any]
+                let isValid = try self.performValidation(with: dictionary)
                 XCTAssert(isValid)
             } catch {
                 debugPrint(error)
@@ -24,11 +24,11 @@ class JSONTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
 
-    private func performValidation(with json: JSONObject) throws -> Bool {
-        let profile = try Profile(json: json)
+    private func performValidation(with dictionary: [String : Any]) throws -> Bool {
+        let profile = try Profile(dictionary: dictionary)
         let isModelValid = performModelValidation(with: profile)
-        let isModelJSONValid = performJSONValidation(with: profile)
-        let isValid = isModelValid && isModelJSONValid
+        let isModelDictionaryValid = performDictionaryValidation(with: profile)
+        let isValid = isModelValid && isModelDictionaryValid
         return isValid
     }
     
@@ -48,17 +48,17 @@ class JSONTests: XCTestCase {
         }
     }
     
-    private func performJSONValidation(with profile: Profile) -> Bool {
-        if let user = profile.json["user"] as? JSONObject,
-            let name = profile.json["name"] as? String,
-            let repos = profile.json["repos"] as? [JSONObject],
+    private func performDictionaryValidation(with profile: Profile) -> Bool {
+        if let user = profile.dictionary["user"] as? [String : Any],
+            let name = profile.dictionary["name"] as? String,
+            let repos = profile.dictionary["repos"] as? Array<[String : Any]>,
             user["id"] as? Int == 2762374,
             user["login"] as? String == "tadija",
             name == "Marko Tadić",
             let thisRepo = repos.filter({ $0["id"] as? Int == 82324664 }).first,
             thisRepo["name"] as? String == "json-convertible",
             thisRepo["private"] as? Bool == false,
-            let owner = thisRepo["owner"] as? JSONObject,
+            let owner = thisRepo["owner"] as? [String : Any],
             owner["login"] as? String == "tadija"
         {
             return true
@@ -67,9 +67,9 @@ class JSONTests: XCTestCase {
         }
     }
 
-    static var allTests : [(String, (JSONTests) -> () throws -> Void)] {
+    static var allTests : [(String, (ConvertibleTests) -> () throws -> Void)] {
         return [
-            ("testJSONConvertible", testJSONConvertible),
+            ("testConvertible", testConvertible),
         ]
     }
     

@@ -1,5 +1,5 @@
 import Foundation
-import JSONConvertible
+import Convertible
 
 typealias ThrowAnyInClosure = (() throws -> Any) -> Void
 
@@ -14,7 +14,7 @@ class DataSource {
     func fetchModel(username: String, completion: @escaping ThrowAnyInClosure) {
         fetchUser(username: username) { (closure) in
             do {
-                if var profileData = try closure() as? JSONObject {
+                if var profileData = try closure() as? [String : Any] {
                     self.fetchRepos(username: username, completion: { (closure) in
                         do {
                             let reposData = try closure()
