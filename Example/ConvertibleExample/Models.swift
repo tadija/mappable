@@ -1,5 +1,3 @@
-import Convertible
-
 struct User: Convertible {
     let id: Int
     let login: String
