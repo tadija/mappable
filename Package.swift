@@ -1,5 +1,6 @@
 import PackageDescription
 
 let package = Package(
-    name: "JSONConvertible"
+    name: "Convertible",
+    exclude: ["Example"]
 )

@@ -1,6 +1,6 @@
-# JSONConvertible
+# Convertible
 
-**Swift package for simple and lightweight handling of JSON backed models**
+**Swift package for simple and lightweight serializing models**
 
 > I made this for personal use, feel free to use it or contribute if you like.
 
@@ -14,73 +14,41 @@
 
 ## Use
 
-#### This is merely a concept how someone could use JSON backed models in a Swift app, but without using too much of boilerplate and repeatable code.  
-
-Example below is based on data received from [GitHub API](https://developer.github.com/v3/).  
+Example below is based on JSON data received from [GitHub API](https://developer.github.com/v3/).  
 **Note:** Models in example are unnecessary complex in order to show capabilities of this package.
 
-Start with conforming your models to `JSONConvertible` protocol.  
-`JSONObject` is just a `public typealias JSONObject = [String : Any]`.
+Start with conforming your models to `Convertible` protocol.  
 
 ```swift
-public protocol JSONConvertible {
-    var json: JSONObject { get }
-    init(json: JSONObject) throws
+public protocol Convertible {
+    var dictionary: [String : Any] { get }
+    init(dictionary: [String : Any]) throws
 }
 ```
 
 
-Property `json` is already implemented in extension of `JSONConvertible`, so you'll need to override that if your property names are different then field names returned in JSON (for the sake of simplicity example models are using same property names as received in JSON data).
+Property `dictionary` is already implemented in `Convertible` protocol extension, so you'll need to override that only if your property names are different then those returned from server (for the sake of simplicity, [example models](Tests/ConvertibleTests/Models.swift) are using same property names).
 
-You must implement only custom initializer with `JSONObject` and there you can use these helpers (coming from the extension of `JSONObject`):
+You must implement only custom initializer with `[String : Any]` and there you can use these helpers:
 
-- `try json.value(forKey: "SOME_KEY")` - use this to populate any supported value
-- `try json.object(forKey: "SOME_KEY")` - use this to create any `JSONConvertible` model
-- `try json.objectsArray(forKey: "SOME_KEY")` - use this to create any array of `JSONConvertible` model
+- `try dictionary.value(forKey: "SOME_KEY")` - populate any supported value
+- `try dictionary.object(forKey: "SOME_KEY")` - create any nested `Convertible` model
+- `try dictionary.objectsArray(forKey: "SOME_KEY")` - create array of nested `Convertible` models
 
-Here's a complete example of some fictional model structure:
+Finally, when you're done implementing `Convertible` on your models, you can do these kind of stuff:
 
 ```swift
-import JSONConvertible
+let jsonData = ...
 
-struct User: JSONConvertible {
-    let id: Int
-    let login: String
-    
-    init(json: JSONObject) throws {
-        id = try json.value(forKey: "id")
-        login = try json.value(forKey: "login")
-    }
-}
+// create custom models directly from JSON data
+let customModel = CustomModel(jsonData: jsonData)
 
-struct Repo: JSONConvertible {
-    let id: Int
-    let name: String
-    let `private`: Bool
-    let owner: User
-    
-    init(json: JSONObject) throws {
-        id = try json.value(forKey: "id")
-        name = try json.value(forKey: "name")
-        `private` = try json.value(forKey: "private")
-        owner = try json.object(forKey: "owner")
-    }
-}
+// create array of custom models
+let arrayOfCustomModels: [CustomModel] = CustomModel.array(with: jsonData)
 
-struct Profile: JSONConvertible {
-    let user: User
-    let name: String
-    let repos: [Repo]
-    
-    init(json: JSONObject) throws {
-        user = try User(json: json)
-        name = try json.value(forKey: "name")
-        repos = try json.objectsArray(forKey: "repos")
-    }
-}
+// get model's JSON representation
+let jsonData = customModel.json()
 ```
-
-So that's it, you can use this to make nested JSON backed models, all there's left to do is to fill them with some data... 
 
 > For more examples check out [Sources](Sources) and [Tests](Tests).
 
