@@ -9,7 +9,7 @@
 - [Swift Package Manager](https://swift.org/package-manager/):
 
 ```
-.Package(url: "https://github.com/tadija/json-convertible.git", majorVersion: 0)
+.Package(url: "https://github.com/tadija/convertible.git", majorVersion: 0)
 ```
 
 ## Use
