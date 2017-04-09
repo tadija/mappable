@@ -1,6 +1,6 @@
 import PackageDescription
 
 let package = Package(
-    name: "Convertible",
+    name: "Mappable",
     exclude: ["Example"]
 )
