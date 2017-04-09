@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8BD8F6A31E9A71AD00C9BBA3 /* Mappable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD8F6991E9A71AD00C9BBA3 /* Mappable.framework */; };
-		8BD8F6A81E9A71AD00C9BBA3 /* MappableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6A71E9A71AD00C9BBA3 /* MappableTests.swift */; };
-		8BD8F6AA1E9A71AD00C9BBA3 /* Mappable.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BD8F69C1E9A71AD00C9BBA3 /* Mappable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BD8F6B91E9A742A00C9BBA3 /* Mappable+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6B51E9A742A00C9BBA3 /* Mappable+JSON.swift */; };
+		8BD8F6BA1E9A742A00C9BBA3 /* Mappable.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BD8F6B61E9A742A00C9BBA3 /* Mappable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BD8F6BB1E9A742A00C9BBA3 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6B71E9A742A00C9BBA3 /* Mappable.swift */; };
+		8BD8F6C61E9A744C00C9BBA3 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6C11E9A744C00C9BBA3 /* DataSource.swift */; };
+		8BD8F6C71E9A744C00C9BBA3 /* MappableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6C21E9A744C00C9BBA3 /* MappableTests.swift */; };
+		8BD8F6C81E9A744C00C9BBA3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6C31E9A744C00C9BBA3 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +28,16 @@
 
 /* Begin PBXFileReference section */
 		8BD8F6991E9A71AD00C9BBA3 /* Mappable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mappable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BD8F69C1E9A71AD00C9BBA3 /* Mappable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Mappable.h; path = ../Sources/Mappable.h; sourceTree = "<group>"; };
-		8BD8F69D1E9A71AD00C9BBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Sources/Info.plist; sourceTree = "<group>"; };
 		8BD8F6A21E9A71AD00C9BBA3 /* MappableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MappableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BD8F6A71E9A71AD00C9BBA3 /* MappableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MappableTests.swift; path = ../Tests/MappableTests/MappableTests.swift; sourceTree = "<group>"; };
-		8BD8F6A91E9A71AD00C9BBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Tests/Info.plist; sourceTree = "<group>"; };
+		8BD8F6B41E9A742A00C9BBA3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BD8F6B51E9A742A00C9BBA3 /* Mappable+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mappable+JSON.swift"; sourceTree = "<group>"; };
+		8BD8F6B61E9A742A00C9BBA3 /* Mappable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mappable.h; sourceTree = "<group>"; };
+		8BD8F6B71E9A742A00C9BBA3 /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		8BD8F6BE1E9A744C00C9BBA3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BD8F6BF1E9A744C00C9BBA3 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		8BD8F6C11E9A744C00C9BBA3 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		8BD8F6C21E9A744C00C9BBA3 /* MappableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappableTests.swift; sourceTree = "<group>"; };
+		8BD8F6C31E9A744C00C9BBA3 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +62,8 @@
 		8BD8F68F1E9A71AD00C9BBA3 = {
 			isa = PBXGroup;
 			children = (
-				8BD8F69B1E9A71AD00C9BBA3 /* Sources */,
-				8BD8F6A61E9A71AD00C9BBA3 /* Tests */,
+				8BD8F6B31E9A742A00C9BBA3 /* Sources */,
+				8BD8F6BD1E9A744C00C9BBA3 /* Tests */,
 				8BD8F69A1E9A71AD00C9BBA3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,24 +77,51 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8BD8F69B1E9A71AD00C9BBA3 /* Sources */ = {
+		8BD8F6B31E9A742A00C9BBA3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				8BD8F69C1E9A71AD00C9BBA3 /* Mappable.h */,
-				8BD8F69D1E9A71AD00C9BBA3 /* Info.plist */,
+				8BD8F6B71E9A742A00C9BBA3 /* Mappable.swift */,
+				8BD8F6B51E9A742A00C9BBA3 /* Mappable+JSON.swift */,
+				8BD8F6BC1E9A743400C9BBA3 /* Supporting Files */,
 			);
-			name = Sources;
-			path = Mappable;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		8BD8F6A61E9A71AD00C9BBA3 /* Tests */ = {
+		8BD8F6BC1E9A743400C9BBA3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8BD8F6A71E9A71AD00C9BBA3 /* MappableTests.swift */,
-				8BD8F6A91E9A71AD00C9BBA3 /* Info.plist */,
+				8BD8F6B61E9A742A00C9BBA3 /* Mappable.h */,
+				8BD8F6B41E9A742A00C9BBA3 /* Info.plist */,
 			);
-			name = Tests;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8BD8F6BD1E9A744C00C9BBA3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8BD8F6C01E9A744C00C9BBA3 /* MappableTests */,
+				8BD8F6C91E9A745A00C9BBA3 /* Supporting Files */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		8BD8F6C01E9A744C00C9BBA3 /* MappableTests */ = {
+			isa = PBXGroup;
+			children = (
+				8BD8F6C11E9A744C00C9BBA3 /* DataSource.swift */,
+				8BD8F6C21E9A744C00C9BBA3 /* MappableTests.swift */,
+				8BD8F6C31E9A744C00C9BBA3 /* Models.swift */,
+			);
 			path = MappableTests;
+			sourceTree = "<group>";
+		};
+		8BD8F6C91E9A745A00C9BBA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BD8F6BF1E9A744C00C9BBA3 /* LinuxMain.swift */,
+				8BD8F6BE1E9A744C00C9BBA3 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,7 +131,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BD8F6AA1E9A71AD00C9BBA3 /* Mappable.h in Headers */,
+				8BD8F6BA1E9A742A00C9BBA3 /* Mappable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +236,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD8F6B91E9A742A00C9BBA3 /* Mappable+JSON.swift in Sources */,
+				8BD8F6BB1E9A742A00C9BBA3 /* Mappable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BD8F6A81E9A71AD00C9BBA3 /* MappableTests.swift in Sources */,
+				8BD8F6C61E9A744C00C9BBA3 /* DataSource.swift in Sources */,
+				8BD8F6C71E9A744C00C9BBA3 /* MappableTests.swift in Sources */,
+				8BD8F6C81E9A744C00C9BBA3 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +372,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.Mappable;
@@ -351,7 +391,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.Mappable;
@@ -364,6 +404,7 @@
 		8BD8F6B11E9A71AD00C9BBA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = VL46Q749LJ;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -376,6 +417,7 @@
 		8BD8F6B21E9A71AD00C9BBA3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = VL46Q749LJ;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -404,6 +446,7 @@
 				8BD8F6AF1E9A71AD00C9BBA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8BD8F6B01E9A71AD00C9BBA3 /* Build configuration list for PBXNativeTarget "MappableTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +455,7 @@
 				8BD8F6B21E9A71AD00C9BBA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
