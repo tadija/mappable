@@ -1,6 +1,6 @@
 import UIKit
 
-class TableViewController: UITableViewController {
+class ReposTableViewController: UITableViewController {
 
     private let dataSource = DataSource()
     

@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8BD8F6D81E9A785900C9BBA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6D71E9A785900C9BBA3 /* AppDelegate.swift */; };
+		8BD8F6DD1E9A785900C9BBA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BD8F6DB1E9A785900C9BBA3 /* Main.storyboard */; };
+		8BD8F6DF1E9A785900C9BBA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD8F6DE1E9A785900C9BBA3 /* Assets.xcassets */; };
+		8BD8F6E21E9A785900C9BBA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BD8F6E01E9A785900C9BBA3 /* LaunchScreen.storyboard */; };
+		8BD8F6F51E9A78FA00C9BBA3 /* ReposTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6F41E9A78FA00C9BBA3 /* ReposTableViewController.swift */; };
+		8BD8F6F81E9A795B00C9BBA3 /* Mappable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD8F6EF1E9A788A00C9BBA3 /* Mappable.framework */; };
+		8BD8F6F91E9A795B00C9BBA3 /* Mappable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD8F6EF1E9A788A00C9BBA3 /* Mappable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8BD8F6FF1E9A79A800C9BBA3 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6FD1E9A79A800C9BBA3 /* DataSource.swift */; };
+		8BD8F7001E9A79A800C9BBA3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6FE1E9A79A800C9BBA3 /* Models.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8BD8F6EE1E9A788A00C9BBA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BD8F6E91E9A788A00C9BBA3 /* Mappable.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8BD8F6991E9A71AD00C9BBA3;
+			remoteInfo = Mappable;
+		};
+		8BD8F6F01E9A788A00C9BBA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BD8F6E91E9A788A00C9BBA3 /* Mappable.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8BD8F6A21E9A71AD00C9BBA3;
+			remoteInfo = MappableTests;
+		};
+		8BD8F6FA1E9A795B00C9BBA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BD8F6E91E9A788A00C9BBA3 /* Mappable.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BD8F6981E9A71AD00C9BBA3;
+			remoteInfo = Mappable;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8BD8F6FC1E9A795B00C9BBA3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8BD8F6F91E9A795B00C9BBA3 /* Mappable.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8BD8F6D41E9A785900C9BBA3 /* MappableExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MappableExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BD8F6D71E9A785900C9BBA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8BD8F6DC1E9A785900C9BBA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8BD8F6DE1E9A785900C9BBA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BD8F6E11E9A785900C9BBA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8BD8F6E31E9A785900C9BBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BD8F6E91E9A788A00C9BBA3 /* Mappable.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mappable.xcodeproj; path = ../Mappable.xcodeproj; sourceTree = "<group>"; };
+		8BD8F6F41E9A78FA00C9BBA3 /* ReposTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposTableViewController.swift; sourceTree = "<group>"; };
+		8BD8F6FD1E9A79A800C9BBA3 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = ../../Tests/MappableTests/DataSource.swift; sourceTree = "<group>"; };
+		8BD8F6FE1E9A79A800C9BBA3 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = ../../Tests/MappableTests/Models.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8BD8F6D11E9A785900C9BBA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD8F6F81E9A795B00C9BBA3 /* Mappable.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8BD8F6CB1E9A785900C9BBA3 = {
+			isa = PBXGroup;
+			children = (
+				8BD8F6E91E9A788A00C9BBA3 /* Mappable.xcodeproj */,
+				8BD8F6D61E9A785900C9BBA3 /* MappableExample */,
+				8BD8F6D51E9A785900C9BBA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8BD8F6D51E9A785900C9BBA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BD8F6D41E9A785900C9BBA3 /* MappableExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BD8F6D61E9A785900C9BBA3 /* MappableExample */ = {
+			isa = PBXGroup;
+			children = (
+				8BD8F6D71E9A785900C9BBA3 /* AppDelegate.swift */,
+				8BD8F6DB1E9A785900C9BBA3 /* Main.storyboard */,
+				8BD8F6F41E9A78FA00C9BBA3 /* ReposTableViewController.swift */,
+				8BD8F7011E9A7A1400C9BBA3 /* Helpers */,
+				8BD8F6F71E9A792200C9BBA3 /* Supporting Files */,
+			);
+			path = MappableExample;
+			sourceTree = "<group>";
+		};
+		8BD8F6EA1E9A788A00C9BBA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BD8F6EF1E9A788A00C9BBA3 /* Mappable.framework */,
+				8BD8F6F11E9A788A00C9BBA3 /* MappableTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BD8F6F71E9A792200C9BBA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BD8F6E01E9A785900C9BBA3 /* LaunchScreen.storyboard */,
+				8BD8F6DE1E9A785900C9BBA3 /* Assets.xcassets */,
+				8BD8F6E31E9A785900C9BBA3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8BD8F7011E9A7A1400C9BBA3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8BD8F6FD1E9A79A800C9BBA3 /* DataSource.swift */,
+				8BD8F6FE1E9A79A800C9BBA3 /* Models.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8BD8F6D31E9A785900C9BBA3 /* MappableExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BD8F6E61E9A785900C9BBA3 /* Build configuration list for PBXNativeTarget "MappableExample" */;
+			buildPhases = (
+				8BD8F6D01E9A785900C9BBA3 /* Sources */,
+				8BD8F6D11E9A785900C9BBA3 /* Frameworks */,
+				8BD8F6D21E9A785900C9BBA3 /* Resources */,
+				8BD8F6FC1E9A795B00C9BBA3 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BD8F6FB1E9A795B00C9BBA3 /* PBXTargetDependency */,
+			);
+			name = MappableExample;
+			productName = MappableExample;
+			productReference = 8BD8F6D41E9A785900C9BBA3 /* MappableExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BD8F6CC1E9A785900C9BBA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = AE;
+				TargetAttributes = {
+					8BD8F6D31E9A785900C9BBA3 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = VL46Q749LJ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8BD8F6CF1E9A785900C9BBA3 /* Build configuration list for PBXProject "MappableExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8BD8F6CB1E9A785900C9BBA3;
+			productRefGroup = 8BD8F6D51E9A785900C9BBA3 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8BD8F6EA1E9A788A00C9BBA3 /* Products */;
+					ProjectRef = 8BD8F6E91E9A788A00C9BBA3 /* Mappable.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8BD8F6D31E9A785900C9BBA3 /* MappableExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8BD8F6EF1E9A788A00C9BBA3 /* Mappable.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Mappable.framework;
+			remoteRef = 8BD8F6EE1E9A788A00C9BBA3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8BD8F6F11E9A788A00C9BBA3 /* MappableTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MappableTests.xctest;
+			remoteRef = 8BD8F6F01E9A788A00C9BBA3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8BD8F6D21E9A785900C9BBA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD8F6E21E9A785900C9BBA3 /* LaunchScreen.storyboard in Resources */,
+				8BD8F6DF1E9A785900C9BBA3 /* Assets.xcassets in Resources */,
+				8BD8F6DD1E9A785900C9BBA3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8BD8F6D01E9A785900C9BBA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD8F6FF1E9A79A800C9BBA3 /* DataSource.swift in Sources */,
+				8BD8F6D81E9A785900C9BBA3 /* AppDelegate.swift in Sources */,
+				8BD8F6F51E9A78FA00C9BBA3 /* ReposTableViewController.swift in Sources */,
+				8BD8F7001E9A79A800C9BBA3 /* Models.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8BD8F6FB1E9A795B00C9BBA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Mappable;
+			targetProxy = 8BD8F6FA1E9A795B00C9BBA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8BD8F6DB1E9A785900C9BBA3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BD8F6DC1E9A785900C9BBA3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8BD8F6E01E9A785900C9BBA3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BD8F6E11E9A785900C9BBA3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8BD8F6E41E9A785900C9BBA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8BD8F6E51E9A785900C9BBA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8BD8F6E71E9A785900C9BBA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VL46Q749LJ;
+				INFOPLIST_FILE = MappableExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.MappableExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8BD8F6E81E9A785900C9BBA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VL46Q749LJ;
+				INFOPLIST_FILE = MappableExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.MappableExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8BD8F6CF1E9A785900C9BBA3 /* Build configuration list for PBXProject "MappableExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BD8F6E41E9A785900C9BBA3 /* Debug */,
+				8BD8F6E51E9A785900C9BBA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BD8F6E61E9A785900C9BBA3 /* Build configuration list for PBXNativeTarget "MappableExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BD8F6E71E9A785900C9BBA3 /* Debug */,
+				8BD8F6E81E9A785900C9BBA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8BD8F6CC1E9A785900C9BBA3 /* Project object */;
+}
