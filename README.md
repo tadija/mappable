@@ -47,16 +47,16 @@ Finally, when you're done implementing `Mappable` on your models, you can do the
 
 ```swift
 struct Model: Mappable {
-	...
+    // some model implementing Mappable protocol
 }
 
-let jsonData = ...
+let data = ... // some JSON data
 
 // create models directly from JSON data
-let model = Model(jsonData: jsonData)
+let model = Model(jsonData: data)
 
 // create array of custom models
-let arrayOfModels: [Model] = Model.array(with: jsonData)
+let arrayOfModels: [Model] = Model.array(with: data)
 
 // get model's JSON data representation
 let jsonData = model.json()
