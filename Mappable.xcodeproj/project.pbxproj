@@ -36,8 +36,9 @@
 		8BD8F6BE1E9A744C00C9BBA3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BD8F6BF1E9A744C00C9BBA3 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		8BD8F6C11E9A744C00C9BBA3 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		8BD8F6C21E9A744C00C9BBA3 /* MappableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappableTests.swift; sourceTree = "<group>"; };
+		8BD8F6C21E9A744C00C9BBA3 /* MappableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MappableTests.swift; path = MappableTests/MappableTests.swift; sourceTree = "<group>"; };
 		8BD8F6C31E9A744C00C9BBA3 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		8BD8F6CA1E9A762400C9BBA3 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 		8BD8F68F1E9A71AD00C9BBA3 = {
 			isa = PBXGroup;
 			children = (
+				8BD8F6CA1E9A762400C9BBA3 /* Package.swift */,
 				8BD8F6B31E9A742A00C9BBA3 /* Sources */,
 				8BD8F6BD1E9A744C00C9BBA3 /* Tests */,
 				8BD8F69A1E9A71AD00C9BBA3 /* Products */,
@@ -99,19 +101,20 @@
 		8BD8F6BD1E9A744C00C9BBA3 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				8BD8F6C01E9A744C00C9BBA3 /* MappableTests */,
+				8BD8F6C21E9A744C00C9BBA3 /* MappableTests.swift */,
+				8BD8F6C01E9A744C00C9BBA3 /* Helpers */,
 				8BD8F6C91E9A745A00C9BBA3 /* Supporting Files */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		8BD8F6C01E9A744C00C9BBA3 /* MappableTests */ = {
+		8BD8F6C01E9A744C00C9BBA3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8BD8F6C11E9A744C00C9BBA3 /* DataSource.swift */,
-				8BD8F6C21E9A744C00C9BBA3 /* MappableTests.swift */,
 				8BD8F6C31E9A744C00C9BBA3 /* Models.swift */,
+				8BD8F6C11E9A744C00C9BBA3 /* DataSource.swift */,
 			);
+			name = Helpers;
 			path = MappableTests;
 			sourceTree = "<group>";
 		};
@@ -186,8 +189,7 @@
 				TargetAttributes = {
 					8BD8F6981E9A71AD00C9BBA3 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = VL46Q749LJ;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					8BD8F6A11E9A71AD00C9BBA3 = {
 						CreatedOnToolsVersion = 8.3;
@@ -368,7 +370,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VL46Q749LJ;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -377,6 +379,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.Mappable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -387,7 +390,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VL46Q749LJ;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -396,6 +399,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.Mappable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
