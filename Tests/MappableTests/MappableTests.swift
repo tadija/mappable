@@ -1,11 +1,11 @@
 import XCTest
-@testable import Convertible
+@testable import Mappable
 
-class ConvertibleTests: XCTestCase {
+class MappableTests: XCTestCase {
     
     let dataSource = DataSource()
     
-    func testConvertible() {
+    func testMappable() {
         let fetchModel = expectation(description: "Fetch Model")
         
         dataSource.fetchProfile(username: "tadija") { (closure) in
@@ -35,7 +35,6 @@ class ConvertibleTests: XCTestCase {
         if profile.user.id == 2762374,
             profile.user.login == "tadija",
             let repo = thisRepo,
-            repo.name == "json-convertible",
             repo.`private` == false,
             repo.owner.login == "tadija"
         {
@@ -46,12 +45,11 @@ class ConvertibleTests: XCTestCase {
     }
     
     private func performDictionaryValidation(with profile: Profile) -> Bool {
-        if let user = profile.dictionary["user"] as? [String : Any],
-            let repos = profile.dictionary["repos"] as? Array<[String : Any]>,
+        if let user = profile.map["user"] as? [String : Any],
+            let repos = profile.map["repos"] as? Array<[String : Any]>,
             user["id"] as? Int == 2762374,
             user["login"] as? String == "tadija",
             let thisRepo = repos.filter({ $0["id"] as? Int == 82324664 }).first,
-            thisRepo["name"] as? String == "json-convertible",
             thisRepo["private"] as? Bool == false,
             let owner = thisRepo["owner"] as? [String : Any],
             owner["login"] as? String == "tadija"
@@ -62,9 +60,9 @@ class ConvertibleTests: XCTestCase {
         }
     }
 
-    static var allTests : [(String, (ConvertibleTests) -> () throws -> Void)] {
+    static var allTests : [(String, (MappableTests) -> () throws -> Void)] {
         return [
-            ("testConvertible", testConvertible),
+            ("testMappable", testMappable),
         ]
     }
     
