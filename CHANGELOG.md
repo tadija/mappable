@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.3.1
+
+- Changed deployment target for iOS to 8.0
+
 ## Version 0.3.0
 
 - Renamed from Convertible -> Mappable
