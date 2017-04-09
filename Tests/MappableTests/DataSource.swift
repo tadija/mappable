@@ -22,10 +22,10 @@ class DataSource {
                     do {
                         let repos = try closure()
                         
-                        var data = user.dictionary
-                        data["repos"] = repos.map{ $0.dictionary }
+                        var profileMap = user.map
+                        profileMap["repos"] = repos.map{ $0.map }
                         
-                        let profile = try Profile(dictionary: data)
+                        let profile = try Profile(map: profileMap)
                         completion {
                             return profile
                         }
