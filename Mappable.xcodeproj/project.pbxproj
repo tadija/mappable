@@ -27,6 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B3276021E9AD9A400FD9502 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		8B3276031E9AD9A400FD9502 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8B3276041E9AD9A400FD9502 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8BD8F6991E9A71AD00C9BBA3 /* Mappable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mappable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD8F6A21E9A71AD00C9BBA3 /* MappableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MappableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD8F6B41E9A742A00C9BBA3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +63,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B3276051E9ADA7C00FD9502 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B3276031E9AD9A400FD9502 /* LICENSE */,
+				8B3276041E9AD9A400FD9502 /* README.md */,
+				8B3276021E9AD9A400FD9502 /* CHANGELOG.md */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		8BD8F68F1E9A71AD00C9BBA3 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +80,7 @@
 				8BD8F6B31E9A742A00C9BBA3 /* Sources */,
 				8BD8F6BD1E9A744C00C9BBA3 /* Tests */,
 				8BD8F69A1E9A71AD00C9BBA3 /* Products */,
+				8B3276051E9ADA7C00FD9502 /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};
