@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.3.0
+
+- Renamed from Convertible -> Mappable
+- Created Cocoa Touch Framework project 
+
 ## Version 0.2.0
 
 - Renamed from JSONConvertible -> Convertible
