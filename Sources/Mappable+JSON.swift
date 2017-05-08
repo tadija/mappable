@@ -15,21 +15,13 @@ public extension Mappable {
         return data
     }
     
-    public static func array<T: Mappable>(with jsonData: Data,
+    public static func mappableArray<T: Mappable>(with jsonData: Data,
                              options: JSONSerialization.ReadingOptions = .allowFragments) throws -> [T] {
         guard let json = try JSONSerialization.jsonObject(with: jsonData, options: options) as? [Any] else {
             throw MappableError.mappingFailed
         }
-        var array = [T]()
-        try json.forEach {
-            if let map = $0 as? [String : Any] {
-                let model = try T(map: map)
-                array.append(model)
-            } else {
-                throw MappableError.mappingFailed
-            }
-        }
-        return array
+        let mappableArray: [T] = try json.mappableArray()
+        return mappableArray
     }
 
 }
