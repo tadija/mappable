@@ -38,8 +38,8 @@ Property `map` is already implemented in `Mappable` protocol extension, so you'l
 You must implement only custom initializer with `map: [String : Any]` and there you can use these helpers:
 
 - `try map.value(forKey: "SOME_KEY")` - populate any supported value
-- `try map.object(forKey: "SOME_KEY")` - create any nested `Mappable` model
-- `try map.objectsArray(forKey: "SOME_KEY")` - create array of nested `Mappable` models
+- `try map.mappable(forKey: "SOME_KEY")` - create any nested `Mappable` model
+- `try map.mappableArray(forKey: "SOME_KEY")` - create array of nested `Mappable` models
 
 ### JSON
 
@@ -56,7 +56,7 @@ let data = ... // some JSON data
 let model = Model(jsonData: data)
 
 // create array of custom models
-let arrayOfModels: [Model] = Model.array(with: data)
+let arrayOfModels: [Model] = Model.mappableArray(with: data)
 
 // get model's JSON data representation
 let jsonData = model.json()

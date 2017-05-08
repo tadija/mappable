@@ -20,7 +20,7 @@ struct Repo: Mappable {
         id = try map.value(forKey: "id")
         name = try map.value(forKey: "name")
         `private` = try map.value(forKey: "private")
-        owner = try map.object(forKey: "owner")
+        owner = try map.mappable(forKey: "owner")
     }
 }
 
@@ -30,6 +30,6 @@ struct Profile: Mappable {
     
     init(map: [String : Any]) throws {
         user = try User(map: map)
-        repos = try map.objectsArray(forKey: "repos")
+        repos = try map.mappableArray(forKey: "repos")
     }
 }

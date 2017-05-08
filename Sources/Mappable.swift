@@ -43,7 +43,7 @@ public extension Dictionary where Key: ExpressibleByStringLiteral {
         return typedValue
     }
     
-    public func object<T: Mappable>(forKey key: String) throws -> T {
+    public func mappable<T: Mappable>(forKey key: String) throws -> T {
         guard let value = self[key as! Key] else {
             throw MappableError.valueMissing(forKey: key)
         }
@@ -53,19 +53,32 @@ public extension Dictionary where Key: ExpressibleByStringLiteral {
         return try T(map: map)
     }
     
-    public func objectsArray<T: Mappable>(forKey key: String) throws -> [T] {
+    public func mappableArray<T: Mappable>(forKey key: String) throws -> [T] {
         guard let value = self[key as! Key] else {
             throw MappableError.valueMissing(forKey: key)
         }
-        guard let mapArray = value as? Array<[String : Any]> else {
+        guard let array = value as? Array<[String : Any]> else {
             throw MappableError.valueTypeWrong(forKey: key)
         }
-        var modelArray = [T]()
-        try mapArray.forEach {
-            let model = try T(map: $0)
-            modelArray.append(model)
+        let mappableArray: [T] = try array.mappableArray()
+        return mappableArray
+    }
+    
+}
+
+public extension Array {
+    
+    public func mappableArray<T: Mappable>() throws -> [T] {
+        var array = [T]()
+        try forEach {
+            if let map = $0 as? [String : Any] {
+                let model = try T(map: map)
+                array.append(model)
+            } else {
+                throw MappableError.mappingFailed
+            }
         }
-        return modelArray
+        return array
     }
     
 }

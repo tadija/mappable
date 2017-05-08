@@ -59,7 +59,7 @@ class DataSource {
         fetchData(fromURL: url) { (closure) in
             do {
                 let data = try closure()
-                let repos: [Repo] = try Repo.array(with: data)
+                let repos: [Repo] = try Repo.mappableArray(with: data)
                 completion { return repos }
             } catch {
                 completion { throw error }
