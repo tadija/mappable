@@ -4,6 +4,8 @@
 
 > I made this for personal use, feel free to use it or contribute if you like.
 
+⚠️ This is deprecated since Swift 4 and you should use [Codable](https://developer.apple.com/documentation/swift/codable) instead.
+
 ## Include
 
 - [Swift Package Manager](https://swift.org/package-manager/):
