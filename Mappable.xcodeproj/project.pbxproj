@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8BD8F6A31E9A71AD00C9BBA3 /* Mappable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD8F6991E9A71AD00C9BBA3 /* Mappable.framework */; };
-		8BD8F6B91E9A742A00C9BBA3 /* Mappable+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6B51E9A742A00C9BBA3 /* Mappable+JSON.swift */; };
 		8BD8F6BA1E9A742A00C9BBA3 /* Mappable.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BD8F6B61E9A742A00C9BBA3 /* Mappable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BD8F6BB1E9A742A00C9BBA3 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6B71E9A742A00C9BBA3 /* Mappable.swift */; };
 		8BD8F6C61E9A744C00C9BBA3 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD8F6C11E9A744C00C9BBA3 /* DataSource.swift */; };
@@ -33,7 +32,6 @@
 		8BD8F6991E9A71AD00C9BBA3 /* Mappable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mappable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD8F6A21E9A71AD00C9BBA3 /* MappableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MappableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD8F6B41E9A742A00C9BBA3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BD8F6B51E9A742A00C9BBA3 /* Mappable+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mappable+JSON.swift"; sourceTree = "<group>"; };
 		8BD8F6B61E9A742A00C9BBA3 /* Mappable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mappable.h; sourceTree = "<group>"; };
 		8BD8F6B71E9A742A00C9BBA3 /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		8BD8F6BE1E9A744C00C9BBA3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				8BD8F6B71E9A742A00C9BBA3 /* Mappable.swift */,
-				8BD8F6B51E9A742A00C9BBA3 /* Mappable+JSON.swift */,
 				8BD8F6BC1E9A743400C9BBA3 /* Supporting Files */,
 			);
 			path = Sources;
@@ -252,7 +249,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BD8F6B91E9A742A00C9BBA3 /* Mappable+JSON.swift in Sources */,
 				8BD8F6BB1E9A742A00C9BBA3 /* Mappable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
